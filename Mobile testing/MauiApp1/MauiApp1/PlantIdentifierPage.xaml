@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.PlantIdentifierPage"
+             Title="PlantIdentifierPage"
+             BackgroundColor="LightGray">
+    
+    <Grid RowSpacing="0" RowDefinitions="50,50,*"
+	      ColumnSpacing="0" ColumnDefinitions="*,*,*">
+
+        <Label 
+                Text="Plant Identifier"
+                Grid.Row="0"
+				Grid.ColumnSpan="3"
+                FontSize="30"
+                FontAttributes="Bold"
+                x:Name="LeftPageLabel"
+                HorizontalOptions="Center" />
+
+        <Button
+                Text="X"
+                FontAttributes="Bold"
+                Grid.Row="0"
+				Grid.Column="0"
+                Clicked="OnBackButtonClicked"
+                HorizontalOptions="Center" />
+        </Grid>
+</ContentPage>

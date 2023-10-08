@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MyGardenPage"
+             Title="MyGardenPage"
+             BackgroundColor="LightGray"
+             >
+
+    <Grid x:Name="grid"
+          RowSpacing="10" RowDefinitions="50,600,*"
+	      ColumnSpacing="0" ColumnDefinitions="*,*,*"
+          Margin="10,10,10,10">
+
+        <Label 
+                Text="My Garden"
+                Grid.Row="0"
+                Grid.Column ="1"
+				Grid.ColumnSpan="3"
+                FontSize="30"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+        <Button
+                Text="X"
+                FontAttributes="Bold"
+                Grid.Row="0"
+				Grid.Column="0"
+                Clicked="OnBackButtonClicked" />
+
+        <GraphicsView
+                x:Name="graphicsView"
+                Drawable="{StaticResource drawable}"
+                Grid.Row ="1"
+                Grid.Column ="0"
+                Grid.RowSpan="1"
+                Grid.ColumnSpan ="3"/>
+
+    </Grid>
+    
+</ContentPage>

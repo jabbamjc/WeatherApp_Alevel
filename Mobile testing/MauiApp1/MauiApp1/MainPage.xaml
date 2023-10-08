@@ -1,0 +1,48 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage"
+             BackgroundColor="LightGrey">
+
+    <ScrollView>
+        <Grid RowSpacing="0" RowDefinitions="50,60,*"
+			  ColumnSpacing="0" ColumnDefinitions="*,*,*">
+
+            <Label 
+                Text="Garden Home"
+                Grid.Row="0"
+				Grid.ColumnSpan="3"
+                FontSize="30"
+                FontAttributes="Bold"
+                x:Name="HomeLabel"
+                HorizontalOptions="Center" />
+
+            <Button 
+                Text="My Garden"
+                FontAttributes="Bold"
+				WidthRequest="110"
+                Grid.Row="1"
+				Grid.Column="0"
+                Clicked="OnMyGardenButtonClicked"
+                HorizontalOptions="Center" />
+
+			<Button
+                Text="Weather"
+                FontAttributes="Bold"
+				WidthRequest="110"
+                Grid.Row="1"
+				Grid.Column="1"
+                Clicked="OnWeatherButtonClicked"
+                HorizontalOptions="Center" />
+
+			<Button
+                Text="Plant Identifier"
+                FontAttributes="Bold"
+				WidthRequest="110"
+                Grid.Row="1"
+				Grid.Column="2"
+                Clicked="OnPlantIdentifierButtonClicked"
+                HorizontalOptions="Center" />
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

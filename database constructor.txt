@@ -1,0 +1,41 @@
+DROP TABLE dbo.UserSubscriptions;
+DROP TABLE dbo.Gardens;
+DROP TABLE dbo.Subscriptions;
+DROP TABLE dbo.Users;
+
+CREATE TABLE Users(
+	UserId INT IDENTITY(1,1),
+	Email VARCHAR(255) UNIQUE NOT NULL,
+	Username VARCHAR(255) UNIQUE NOT NULL,
+	Password VARCHAR(255) NOT NULL,
+	
+	PRIMARY KEY (UserId)
+);
+
+CREATE TABLE Gardens(
+	UserId INT,
+	Serialised VARCHAR(MAX),
+	Country VARCHAR(255),
+	Postcode VARCHAR(255),
+	Latitude DECIMAL(8,6),
+	Longitude DECIMAL(9,6),
+
+	PRIMARY KEY (UserId),
+	FOREIGN KEY (UserId) REFERENCES dbo.Users
+);
+
+CREATE TABLE Subscriptions(
+	SubscriptionId INT IDENTITY(1,1),
+	Name VARCHAR(255),
+
+	PRIMARY KEY (SubscriptionId)
+);
+
+CREATE TABLE UserSubscriptions(
+	UserId INT,
+	SubscriptionId INT,
+
+	PRIMARY KEY (UserId, SubscriptionId),
+	FOREIGN KEY (UserId) REFERENCES dbo.Users,
+	FOREIGN KEY (SubscriptionId) REFERENCES dbo.Subscriptions
+);

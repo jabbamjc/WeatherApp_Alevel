@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="weather.GardenPage"
+             Title="GardenPage"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+    <StackLayout
+        Padding="5"
+        Spacing="5">
+        
+        <ScrollView            
+            HorizontalScrollBarVisibility="Never"
+            Orientation="Horizontal">
+
+            <HorizontalStackLayout 
+                x:Name="WeatherScroll"
+                Spacing="5">
+
+            </HorizontalStackLayout>
+        </ScrollView>
+
+        <HorizontalStackLayout
+            Spacing="5">
+            <Button
+                x:Name="AddPlanterButton"
+                Text="Add New Planter"
+                FontSize="16"
+                CornerRadius="10"
+                HeightRequest="50"
+                        
+                Clicked="AddNewPlanter"
+                        
+                VerticalOptions="Center"
+                HorizontalOptions="StartAndExpand"/>
+
+            <Button
+                x:Name="SaveGardenButton"
+                Text="Save Garden"
+                FontSize="16"
+                CornerRadius="10"
+                HeightRequest="50"
+                
+                Clicked="SaveGardenButtonClicked"
+                
+                VerticalOptions="Center"
+                HorizontalOptions="EndAndExpand"/>
+
+        </HorizontalStackLayout>
+
+        <Frame
+            Padding="5"
+            BorderColor="Black"
+            CornerRadius="10"
+            BackgroundColor="{DynamicResource PrimaryColor}">
+
+            <ScrollView           
+                HorizontalScrollBarVisibility="Never"
+                Orientation="Vertical"
+                HeightRequest="400">
+
+                <VerticalStackLayout
+                    x:Name="PlanterLayout"
+                    Spacing="5">
+
+                    <Label
+                        x:Name="NoPlantersLabel"
+                        Text="No Planters"
+                        TextColor="{DynamicResource SecondaryColor}"
+                        FontSize="32"
+                        HorizontalOptions="Center"/>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Frame>
+        
+    </StackLayout>
+</ContentPage>

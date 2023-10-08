@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyGardenApp.GardenSetupPage"
+             Title="GardenSetupPage">
+    <StackLayout
+        Padding="5"
+        Spacing="5">
+
+        <Frame
+            BackgroundColor="{DynamicResource PrimaryColor}"
+            CornerRadius="10"
+            
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+
+            <Label 
+                x:Name="UsersGardenLabel"
+                Text="My Garden"
+                FontSize="32"
+                TextColor="{DynamicResource SecondaryColor}"
+               
+                HorizontalOptions="Center" />
+        </Frame>
+
+        <VerticalStackLayout
+            Spacing="2"
+            HorizontalOptions="Center">
+            <Label
+                Text="Country:"
+                FontSize="16"
+                TextColor="{DynamicResource PrimaryColor}"/>
+
+            <Frame
+                Padding="-7"
+                CornerRadius="10"
+                BorderColor="{DynamicResource PrimaryColor}"
+                
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+
+                <Picker 
+                    x:Name="UserCountryPicker"
+                    Title="Country"
+                    TextColor="{DynamicResource PrimaryColor}"
+                    FontSize="32"
+                    WidthRequest="300"
+                    HorizontalTextAlignment="Center"
+            
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+            </Frame>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout
+            Spacing="2"
+            HorizontalOptions="Center">
+            <Label
+                Text="Postcode/Zip:"
+                FontSize="16"
+                TextColor="{DynamicResource PrimaryColor}"/>
+
+            <Frame
+                Padding="-7"
+                CornerRadius="10"
+                BorderColor="{DynamicResource PrimaryColor}"
+                
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+
+                <Entry
+                    x:Name="UserPostCodeEntry"
+                    TextColor="{DynamicResource PrimaryColor}"
+                    FontSize="32"
+                    Placeholder="Postcode"
+                    WidthRequest="300"
+                    HorizontalTextAlignment="Center"
+                    
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+            </Frame>
+        </VerticalStackLayout>
+
+        <Button
+            x:Name="SaveButton"
+            Text="Save"
+            FontSize="16"
+            Clicked="SaveButtonClicked"
+            
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+        </Button>
+
+    </StackLayout>
+</ContentPage>
